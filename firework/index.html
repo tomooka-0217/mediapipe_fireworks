@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- 3つのライブラリを読み込む -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script><!-- カメラの操作を簡単に -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script><!-- 認識した結果を可視化 -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+
+  <!-- CSS読み込み -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- CDN -->
+  <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+</head>
+
+<body>
+  <div class="container" style="position:relative;">
+    <!-- Webカメラの映像（入力） -->
+    <video id="input" style="display:none;"></video>
+    <!--  認識した手の形状を可視化した映像（出力）  -->
+    <canvas id="output" width="1200" height="800"></canvas>
+    <div id="snow_particlesjs" style="position:absolute;top: 0; left: 0;"></div>
+  </div>
+  <button id="start">start</button>
+  <button id="stop">stop</button>
+
+  <div class="fireworks_container"></div>
+
+
+
+  <!-- JS読み込み -->
+  <script defer type="module" src="fireworks.js"></script>
+  <script defer type="module" src="index.js"></script>
+  <script src="snow.js"></script>
+</body>
+
+</html>
