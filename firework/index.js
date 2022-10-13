@@ -11,9 +11,7 @@ var fireworks_container = document.querySelectorAll('.fireworks_container');
 
 // 花火用コンテナの数だけ関数名用の文字列を配列に追加
 let functionArray = [];
-// for(let i = 0; i<fireworks_container.length; i++){
-//     functionArray[i] = 'fire' + i;
-// }
+
 
 // 花火用コンテナの数だけ関数を作成
 for(let i=0; i<fireworks_container.length; i++){
@@ -87,14 +85,6 @@ hands.onResults(results => {
                 functionArray[num].waitStop(true);
             }
 
-            // if(marks[0]['y'] <= 0.1 || marks[0]['y'] >= 0.9 || marks[0]['x'] <= 0.1 || marks[0]['x'] >= 0.9){
-            //     functionArray[num].waitStop(true);
-            //     functionArray.splice(num,1);
-            //     if(fireworks_container.length > 1){
-            //         fireworks_container[num].remove();
-            //     }
-            // }
-
             // 緑色の線で骨組みを可視化
             drawConnectors(ctx, marks, HAND_CONNECTIONS, { color: '#0f0' });
             num++;
@@ -102,6 +92,7 @@ hands.onResults(results => {
         })
         
     }else{
+        
         functionArray[0].waitStop(true);
         if(Array.isArray(fireworks_container) && fireworks_container.length > 1){
             for(let i=1; i<fireworks_container.length-1; i++){

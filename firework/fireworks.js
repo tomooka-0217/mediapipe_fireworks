@@ -1,8 +1,5 @@
 import { Fireworks } from 'https://cdn.skypack.dev/fireworks-js';
 
-const container = document.querySelectorAll('.fireworks_container');
-
-
 function createFirework(container){
     let fireworks = new Fireworks(container,{
         autoresize: true,
@@ -57,6 +54,5 @@ function createFirework(container){
     return fireworks;
 }
 
-// fireworks.start();
 
 export {createFirework};
